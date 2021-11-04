@@ -1,0 +1,22 @@
+{
+    "name": "benoit82/frameworkphp",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Emmanuel B.",
+            "email": "emmanuel@3wa.io"
+        },
+        {
+            "name": "Benoit D.",
+            "email": "benoit@3wa.io"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.3"
+    }
+}
