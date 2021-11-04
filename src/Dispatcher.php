@@ -13,7 +13,8 @@ class Dispatcher
 
     public function run()
     {
-        // récupère la route à l'aide du router => nom du contrôleur + méthode avec ses paramètres éventuels
+        // récupère la route à l'aide du router => nom du contrôleur 
+        // + méthode avec ses paramètres éventuels
 
         // puis lance la méthode send() pour afficher la réponse.
     }

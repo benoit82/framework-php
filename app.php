@@ -5,6 +5,13 @@ use SimpleFramework\Container;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+
+// $dispatcher = new Dispatcher((new Request)->setUri($_SERVER["REQUEST_URI"]));
+// $_GET / $_SERVER["REQUEST_URI"] pour récupérer la demande du client 
+// $dispatcher->run();
+
+var_dump($_SERVER["REQUEST_URI"]);
+
 function dispatch() {
     $container = new Container;
 
@@ -24,5 +31,4 @@ function dispatch() {
 // $dotenv = new Dotenv(__DIR__);
 // $dotenv->load();
 
-// $dispatcher = new Dispatcher(new Request); // $_GET / $_SERVER["REQUEST_URI"] pour récupérer la demande du client 
 
