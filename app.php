@@ -1,34 +1,46 @@
 <?php
 
+use SimpleFramework\App;
 use SimpleFramework\Blog;
 use SimpleFramework\Container;
+use SimpleFramework\Router;
+use SimpleFramework\Route;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
 
-// $dispatcher = new Dispatcher((new Request)->setUri($_SERVER["REQUEST_URI"]));
-// $_GET / $_SERVER["REQUEST_URI"] pour récupérer la demande du client 
+// $dispatcher = new Dispatcher((new Request));
 // $dispatcher->run();
+
 
 var_dump($_SERVER["REQUEST_URI"]);
 
-function dispatch() {
-    $container = new Container;
+$container = new Container;
 
-    $container['blog.info'] = 'my simple framework';
-    $container['blog'] = function ($c) {
+$router = new Router;
 
-        return new Blog($c['blog.info']);
-    };
-    
-    $instance = new App\HomeController($container);
+$router->addRoute(new Route(url: '/', controllerName: 'HomeController', action: 'index'));
+
+$container['router'] = $router;
+
+$container['blog.info'] = 'my simple framework';
+$container['blog'] = function ($c) {
+
+    return new Blog($c['blog.info']);
+};
+
+App::set($container);
+
+function dispatch()
+{
+
+    $container = App::get();
+    $instance = new UserApp\HomeController($container);
     $method = 'index';
-    
+
     return call_user_func_array([$instance, $method], []);
 }
 // use Dotenv\Dotenv;
 
 // $dotenv = new Dotenv(__DIR__);
 // $dotenv->load();
-
-

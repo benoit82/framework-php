@@ -4,7 +4,7 @@
         "psr-4": {
             "SimpleFramework\\": "src/",
             "": "tests/",
-            "App\\": "App/"
+            "UserApp\\": "App/"
         }
     },
     "authors": [

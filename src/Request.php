@@ -17,5 +17,4 @@ class Request
         return explode('/', substr($this->requestUri, 1)); // ex : '/home/id' => ['home','id']
     }
 
-
 }

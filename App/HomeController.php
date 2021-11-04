@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace UserApp;
 
 use SimpleFramework\Controller;
 
