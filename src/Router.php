@@ -1,7 +1,8 @@
 <?php
 
-namespace App;
+namespace SimpleFramework;
 
+// recupère les listes des routes valide
 class Router
 {
 }
