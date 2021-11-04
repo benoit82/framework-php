@@ -1,8 +1,7 @@
 <?php
 
 namespace SimpleFramework;
-
-// recupère l'URL indiqué par l'utilisateur, coupe 
+ 
 class Request
 {
     private string $requestUri;
@@ -14,7 +13,7 @@ class Request
 
     public function getRequest(): array
     {
-        return explode('/', substr($this->requestUri, 1)); // ex : '/home/id' => ['home','id']
+        return explode('/', substr($this->requestUri, 1));
     }
 
 }

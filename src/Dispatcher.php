@@ -19,12 +19,12 @@ class Dispatcher
         // récupère la route à l'aide du router => nom du contrôleur 
         // + méthode avec ses paramètres éventuels
         $routes = $this->container['router'];
-        $route = $routes->getRoute($this->request->getRequest());
+        $parameters = $this->request->getRequest();
+        $route = $routes->getRoute(array_shift($parameters) ?? "/");
 
         if($route) {
             $instanceController = $this->makeController($route->getControllerName());
-            // TODO : add parameters from $route->getParameters() (renvoi un tableau de parametres)
-            call_user_func_array([$instanceController, $route->getAction()], []);
+            $response = call_user_func_array([$instanceController, $route->getAction()], $parameters ?? []);
         }
 
         // puis lance la méthode send() pour afficher la réponse.
