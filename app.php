@@ -5,14 +5,6 @@ use SimpleFramework\Container;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$container = new Container;
-
-$container['blog.info'] = 'my simple framework';
-$container['blog'] = function($c) {
-
-    return new Blog($c['blog.info']);
-};
-
 function dispatch() {
     $container = new Container;
 
