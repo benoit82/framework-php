@@ -1,7 +1,7 @@
 <?php
 
 namespace SimpleFramework;
- 
+
 class Request
 {
     private string $requestUri;
@@ -15,6 +15,7 @@ class Request
     {
         $params = explode('/', substr($this->requestUri, 1));
         if (count($params) === 1 && $params[0] === '') $params = ['/'];
+
         return $params;
     }
 
