@@ -9,7 +9,7 @@ class Route
         private string $url,
         private string $controllerName,
         private string $action = "index",
-        private string $namespaceController = "UserApp\\"
+        private string $namespaceController = "UserApp"
     ) {
     }
 
@@ -45,6 +45,6 @@ class Route
 
     public function getController()
     {
-        return $this->namespaceController . $this->controllerName;
+        return $this->namespaceController . '\\' . $this->controllerName;
     }
 }
