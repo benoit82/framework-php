@@ -11,7 +11,7 @@ $container = new Container;
 
 $router = new Router;
 
-$router->addRoute(new Route(url: '/', controllerName: 'HomeController', action: 'index'));
+$router->addRoute(new Route(url: '/', controllerName: 'HomeController'));
 
 $container['router'] = $router;
 

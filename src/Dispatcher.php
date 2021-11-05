@@ -16,19 +16,14 @@ class Dispatcher
     {
         $routes = $this->container['router'];
         $parameters = $this->request->getRequest();
-        $route = $routes->getRoute(array_shift($parameters));
+        $route = $routes->getRoute(array_shift($parameters)) ?? new Route('/404', 'NotFoundController');
 
-        if($route) {
-            $instanceController = $this->makeController($route->getControllerName());
-            $this->response = call_user_func_array([$instanceController, $route->getAction()], $parameters ?? []);
-            $this->send();
-        } else {
-            $this->response = '404 PAGE NON TROUVEE';
-            $this->send(status: '404 NOT FOUND');
-        }
+        $instanceController = $this->makeController($route->getController());
+        $this->response = call_user_func_array([$instanceController, $route->getAction()], $parameters ?? []);
+        $this->send($route->getControllerName() === 'NotFoundController' ? '404 NOT FOUND' : '200 OK');
     }
 
-    public function send($status = '200 OK')
+    public function send($status)
     {
         header("HTTP/1.1 $status");
         header("Content-Type: text/html, charset=UTF-8");
@@ -48,5 +43,4 @@ class Dispatcher
     {
         return $this->response;
     }
-
 }

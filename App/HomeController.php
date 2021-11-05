@@ -4,12 +4,13 @@ namespace UserApp;
 
 use SimpleFramework\Controller;
 
-class HomeController extends Controller {
+class HomeController extends Controller
+{
 
     public function index()
     {
-        return $this->container['twig']->render('first.html.twig', [
+        return $this->container['twig']->render('home.html.twig', [
             'name' => 'John Doe',
-        ]);;
+        ]);
     }
 }
