@@ -5,8 +5,6 @@ use SimpleFramework\Request;
 
 class RequestTest extends TestCase {
 
-    private Request $request;
-
     /*
      * @test testGetParametersFromUri test if we retrieve an array parameters from url
      */
