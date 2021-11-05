@@ -3,6 +3,7 @@ Le but de ce framework est de pouvoir gérer dynamiquement les pages affichées 
 
 ### Methode d’ajout de page:
 1.Ajoutez un Controller dans le dossier App
+
 ![images/app-folder.jpeg](images/app-folder.jpeg)
 
 2.Dans le fichier app.php a la racine, ajouter au container la route (url, controller associé) au container.
@@ -38,9 +39,14 @@ $container['form.signIn'] = function ($c) {
 ```
 
 ### Diagram de class du framework:
-Pource projet nous avons utilisé plusieurs design patterncomme par exemple:
+
+![images/uml.jpeg](images/uml.jpeg)
+
+Pour ce projet nous avons utilisé plusieurs design patterncomme par exemple:
+
 * Composite:pour créer le formulaire.
 * Decorator:pour habiller les imputs avec un label.
+ 
  
 Les transitions entre les pages sont faites par un dispatcher qui en fonction de la requête du client retrouve la Route et instancie le bon Controller.
 Il appel sur celui-ci (par défaut la methode index) la méthode enregistré dans le container.
