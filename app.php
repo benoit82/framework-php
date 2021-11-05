@@ -1,7 +1,7 @@
 <?php
 // DB ou form de connection
 use SimpleFramework\{App, Container, Router, Route};
-use SimpleFramework\Form\HTMLElements\{Form, Input, Label, Wrapper};
+use SimpleFramework\Form\{Form, Input, Label, Wrapper};
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 

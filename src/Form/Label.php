@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleFramework\Form\HTMLElements;
+namespace SimpleFramework\Form;
 
 class Label implements HtmlElementInterface
 {

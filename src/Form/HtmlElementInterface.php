@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleFramework\Form\HTMLElements;
+namespace SimpleFramework\Form;
 
 
 interface HtmlElementInterface
