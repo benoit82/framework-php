@@ -10,7 +10,7 @@ class RequestTest extends TestCase {
      */
     public function testGetParametersFromUri()
     {
-        $_SERVER["REQUEST_URI"] = "/home/id/4";
+        $_SERVER['REQUEST_URI'] = '/home/id/4';
         $request = new Request;
         $this->assertEquals($request->getRequest(), ['home','id','4']);
     }
@@ -20,7 +20,7 @@ class RequestTest extends TestCase {
      */
     public function testHomeUrl()
     {
-        $_SERVER["REQUEST_URI"] = "/";
+        $_SERVER['REQUEST_URI'] = '/';
         $request = new Request;
         $this->assertEquals($request->getRequest(), ['/']);
     }
