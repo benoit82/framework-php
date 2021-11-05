@@ -4,10 +4,12 @@ namespace SimpleFramework;
 
 class Route
 {
+
     public function __construct(
         private string $url,
         private string $controllerName,
-        private string $action
+        private string $action,
+        private string $namespaceController = "UserApp\\"
     ) {
     }
 
@@ -38,6 +40,6 @@ class Route
      */
     public function getControllerName()
     {
-        return $this->controllerName;
+        return $this->namespaceController . $this->controllerName;
     }
 }

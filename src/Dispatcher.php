@@ -28,6 +28,7 @@ class Dispatcher
             $this->response = call_user_func_array([$instanceController, $route->getAction()], $parameters ?? []);
             $this->send();
         } else {
+            $this->response = 'Page non trouvé';
             $this->send(status: '404 NOT FOUND');
         }
     }
@@ -42,7 +43,7 @@ class Dispatcher
 
     protected function makeController($controllerName)
     {
-        if (class_exists($controllerName)) {
+        if (class_exists($controllerName,true)) {
             return new $controllerName($this->container);
         }
         return null;
