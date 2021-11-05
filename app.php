@@ -1,6 +1,6 @@
 <?php
 // DB ou form de connection
-use SimpleFramework\{App, Blog, Container, Router, Route};
+use SimpleFramework\{App, Container, Router, Route};
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
@@ -20,12 +20,6 @@ $container['twig'] = function($c) {
     $twig = new Environment($loader);
 
     return $twig;
-};
-
-$container['blog.info'] = 'Hello World';
-$container['blog'] = function ($c) {
-
-    return new Blog($c['blog.info']);
 };
 
 App::set($container);
