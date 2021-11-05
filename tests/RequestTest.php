@@ -24,6 +24,6 @@ class RequestTest extends TestCase {
     {
         $_SERVER["REQUEST_URI"] = "/";
         $request = new Request;
-        $this->assertEquals($request->getRequest(), ['']);
+        $this->assertEquals($request->getRequest(), ['/']);
     }
 }

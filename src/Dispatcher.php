@@ -22,8 +22,6 @@ class Dispatcher
         $routes = $this->container['router'];
         $parameters = $this->request->getRequest();
         $route = $routes->getRoute(array_shift($parameters));
-        var_dump($route);
-
 
         if($route) {
             $instanceController = $this->makeController($route->getControllerName());

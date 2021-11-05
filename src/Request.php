@@ -13,7 +13,9 @@ class Request
 
     public function getRequest(): array
     {
-        return explode('/', substr($this->requestUri, 1));
+        $params = explode('/', substr($this->requestUri, 1));
+        if (count($params) === 1 && $params[0] === '') $params = ['/'];
+        return $params;
     }
 
 }
