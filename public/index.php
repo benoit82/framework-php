@@ -5,6 +5,10 @@
  * @description: framework PHP
  */
 
+use SimpleFramework\Dispatcher;
+use SimpleFramework\Request;
+
 require_once __DIR__ . '/../app.php';
 
-echo dispatch();
+$dispatcher = new Dispatcher(new Request);
+$dispatcher->run();

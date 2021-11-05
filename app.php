@@ -9,11 +9,9 @@ use SimpleFramework\Route;
 require_once __DIR__ . '/vendor/autoload.php';
 
 
-// $dispatcher = new Dispatcher((new Request));
-// $dispatcher->run();
 
 
-var_dump($_SERVER["REQUEST_URI"]);
+// var_dump($_SERVER["REQUEST_URI"]);
 
 $container = new Container;
 
@@ -31,15 +29,15 @@ $container['blog'] = function ($c) {
 
 App::set($container);
 
-function dispatch()
-{
+// function dispatch()
+// {
 
-    $container = App::get();
-    $instance = new UserApp\HomeController($container);
-    $method = 'index';
+//     $container = App::get();
+//     $instance = new UserApp\HomeController($container);
+//     $method = 'index';
 
-    return call_user_func_array([$instance, $method], []);
-}
+//     return call_user_func_array([$instance, $method], []);
+// }
 // use Dotenv\Dotenv;
 
 // $dotenv = new Dotenv(__DIR__);

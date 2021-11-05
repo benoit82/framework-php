@@ -9,6 +9,11 @@ class Router
 {
     private SplObjectStorage $routes;
 
+    public function __construct()
+    {
+        $this->routes = new SplObjectStorage;
+    }
+
     public function addRoute(Route $route)
     {
         $this->routes->attach($route);
