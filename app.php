@@ -1,6 +1,7 @@
 <?php
 // DB ou form de connection
 use SimpleFramework\{App, Container, Router, Route};
+use SimpleFramework\Form\HTMLElements\Input;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
@@ -20,5 +21,9 @@ $container['twig'] = function($c) {
 
     return $twig;
 };
+
+$container['form.signIn'] = function($c) {
+    $inputName = new Input(name: 'Name');
+}
 
 App::set($container);
