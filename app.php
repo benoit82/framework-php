@@ -21,7 +21,7 @@ $router->addRoute(new Route(url: '/', controllerName: 'HomeController', action: 
 
 $container['router'] = $router;
 
-$container['blog.info'] = 'my simple framework';
+$container['blog.info'] = 'Hello World';
 $container['blog'] = function ($c) {
 
     return new Blog($c['blog.info']);

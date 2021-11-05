@@ -43,7 +43,7 @@ class Dispatcher
 
     protected function makeController($controllerName)
     {
-        if (class_exists($controllerName,true)) {
+        if (class_exists($controllerName)) {
             return new $controllerName($this->container);
         }
         return null;
