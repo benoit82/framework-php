@@ -23,7 +23,7 @@ class Dispatcher
         $this->send($route->getControllerName() === 'NotFoundController' ? '404 NOT FOUND' : '200 OK');
     }
 
-    public function send($status)
+    private function send($status)
     {
         header("HTTP/1.1 $status");
         header("Content-Type: text/html, charset=UTF-8");
@@ -31,7 +31,7 @@ class Dispatcher
         echo (string) $this;
     }
 
-    protected function makeController($controllerName)
+    private function makeController($controllerName)
     {
         if (class_exists($controllerName)) {
             return new $controllerName($this->container);

@@ -11,19 +11,12 @@ class SignInController extends Controller
 
     public function __construct()
     {
-        $this->form = new Form(name:'signInUser', action: '/user');
-        $this->buildForm();
-    }
-
-    public function buildForm()
-    {
-        
     }
 
     public function index()
     {
         return $this->container['twig']->render('signInForm.html.twig', [
-            'form' => (string) $this->form,
+            'form' => (string) $this->container['form.signIn'],
         ]);
     }
 }
