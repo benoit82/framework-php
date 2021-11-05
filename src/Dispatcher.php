@@ -28,7 +28,7 @@ class Dispatcher
             $this->response = call_user_func_array([$instanceController, $route->getAction()], $parameters ?? []);
             $this->send();
         } else {
-            $this->response = 'Page non trouvé';
+            $this->response = '404 PAGE NON TROUVEE';
             $this->send(status: '404 NOT FOUND');
         }
     }
