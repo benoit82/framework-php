@@ -1,12 +1,7 @@
 <?php
 
-/**
- * @author: 
- * @description: framework PHP
- */
 
-use SimpleFramework\Dispatcher;
-use SimpleFramework\Request;
+use SimpleFramework\{Dispatcher, Request};
 
 require_once __DIR__ . '/../app.php';
 
