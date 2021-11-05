@@ -6,7 +6,6 @@ use Twig\Loader\FilesystemLoader;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-
 $container = new Container;
 
 $router = new Router;
