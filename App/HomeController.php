@@ -8,6 +8,8 @@ class HomeController extends Controller {
 
     public function index()
     {
-        return (string) $this->container['blog'];
+        return $this->container['twig']->render('first.html.twig', [
+            'name' => 'John Doe',
+        ]);;
     }
 }
